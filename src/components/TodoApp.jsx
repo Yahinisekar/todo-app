@@ -70,11 +70,11 @@ function TodoApp() {
     return (
         <div className="container py-5">
             <h3 className='text-center mb-4'>My Todo</h3>
-            <div className="input-section input-group">
+            <div className="input-section input-group d-flex flex-wrap">
                 <input
                     type="text"
                     placeholder="Todo Name"
-                    value={taskName} className='form-control me-3 rounded'
+                    value={taskName} className='form-control me-3 rounded '
                     onChange={(e) => setTaskName(e.target.value)}
                 />
                 <input
@@ -83,7 +83,7 @@ function TodoApp() {
                     value={taskDescription} className='form-control me-3 rounded'
                     onChange={(e) => setTaskDescription(e.target.value)}
                 />
-                <button onClick={handleAddTask} className='btn success rounded'>Add Todo</button>
+                <button onClick={handleAddTask} className='btn success rounded '>Add Todo</button>
             </div>
             <div className='d-flex  justify-content-between align-items-center my-4 mt-5'>
                 <h5>My Todos</h5>
@@ -100,11 +100,11 @@ function TodoApp() {
             <div id="todo-list">
                   <div className='row'>
                 {filteredTodos.map((todo, index) => (
-                    <div className="todo-item col-4 mb-4" key={index}>
+                    <div className="todo-item mb-4 col-md-4 col-sm-12" key={index}>
                         
                           
                         {editIndex === index ? (
-                            <div className='card h-100'>
+                            <div className='card h-100 '>
                                 <input
                                     type="text"
                                     value={editTaskName} className='form-control rounded'
@@ -144,8 +144,8 @@ function TodoApp() {
                                 </span>
                                         
                                 <div className='buttons'>
-                                    <button onClick={() => handleEdit(index)} className='edit success btn'>Edit</button>
-                                    <button onClick={() => handleDelete(index)} className='btn btn-danger'>Delete</button>
+                                    <button onClick={() => handleEdit(index)} className='edit success btn mb-2'>Edit</button>
+                                    <button onClick={() => handleDelete(index)} className='btn btn-danger mb-2'>Delete</button>
                                 </div>
                                     </div>
                         )}
